@@ -12,6 +12,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pr_sumatohin.data.model.Recipe
 import com.example.pr_sumatohin.ui.theme.Pr_sumatohinTheme
 import com.example.pr_sumatohin.ui.theme.viewModel.RecipeViewModel
+import com.example.pr_sumatohin.ui.theme.viewModel.UserViewModel
 
 
 class MainActivity : ComponentActivity() {
@@ -42,6 +43,9 @@ class MainActivity : ComponentActivity() {
                 caloriesPerServing = 420,
             )
             RecipeViewModule.createRecipe(recipe)
+            //pr3
+            val userViewModel: UserViewModel = viewModel()
+            userViewModel.put(1)
 
         }
     }
