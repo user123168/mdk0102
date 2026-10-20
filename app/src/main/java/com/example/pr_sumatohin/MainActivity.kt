@@ -11,6 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pr_sumatohin.data.model.Recipe
 import com.example.pr_sumatohin.ui.theme.Pr_sumatohinTheme
+import com.example.pr_sumatohin.ui.theme.viewModel.ProductViewModel
 import com.example.pr_sumatohin.ui.theme.viewModel.RecipeViewModel
 import com.example.pr_sumatohin.ui.theme.viewModel.UserViewModel
 
@@ -46,6 +47,9 @@ class MainActivity : ComponentActivity() {
             //pr3
             val userViewModel: UserViewModel = viewModel()
             userViewModel.put(1)
+            //pr4
+            val productViewModel: ProductViewModel = viewModel()
+            productViewModel.delete(3)
 
         }
     }

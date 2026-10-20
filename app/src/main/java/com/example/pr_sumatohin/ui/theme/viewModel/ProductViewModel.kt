@@ -29,4 +29,22 @@ class ProductViewModel: ViewModel() {
             }
         }
     }
+    fun delete(id: Int){
+        viewModelScope.launch {
+            try {
+                val delete  = RetrofitClient.retrofitAPI.deleteProduct(id)
+                Log.d("", "Продукт удален:\n" +
+                        "ID: ${delete.id}\n" +
+                        "Название: ${delete.title}\n" +
+                        "Описание: ${delete.description}\n" +
+                        "Категория: ${delete.category}\n" +
+                        "Цена: ${delete.price}\n" +
+                        "Рейтинг: ${delete.rating}\n" +
+                        "Создатель: ${delete.brand}\n")
+            } catch (e: Exception) {
+                Log.e("", "Произошла ошибка при удалении: ${e.message}", e)
+            }
+        }
+
+    }
 }
